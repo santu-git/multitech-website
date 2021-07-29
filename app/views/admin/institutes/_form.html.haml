@@ -1,0 +1,12 @@
+= semantic_form_for [:admin, @institute], builder: ActiveAdmin::FormBuilder do |f|
+  = f.semantic_errors *f.object.errors.keys
+  = f.inputs "Details" do
+    = f.input :district_id, as: :nested_select, level_1: {attribute: :state_id}, level_2: {attribute: :district_id}
+    = f.input :name
+    = f.input :owner_name
+    = f.input :contact_number
+    = f.input :location
+    = f.input :address
+    = f.input :pin_code
+    = f.input :image, as: :file
+  = f.actions
