@@ -16,7 +16,7 @@ ActiveAdmin.register Institute do
     column :district
     actions
   end
-  form title: 'New Institute' do |f|
+  form do |f|
     f.semantic_errors
     f.inputs do
       f.input :district_id, as: :nested_select, level_1: {attribute: :state_id}, level_2: {attribute: :district_id}
