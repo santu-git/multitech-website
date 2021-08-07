@@ -1,0 +1,25 @@
+#main_content_wrapper
+  #main_content
+    .panel
+      %h3 Student Details
+      .panel_contents
+        #attributes_table_student_1.attributes_table.student
+          %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+            %tbody
+              %tr.row.row-reg_no
+                %td{rowspan: "5"}= image_tag student.image.variant(resize: '100x100')
+                %th Reg No
+                %td= student.reg_no
+              %tr.row.row-name
+                %th Name
+                %td= student.name
+              %tr.row.row-father_name
+                %th Father Name
+                %td= student.father_name
+              %tr.row.row-name
+                %th Contact
+                %td= student.contact_number
+              %tr.row.row-address
+                %th Address
+                %td= student.address
+                  
