@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_170259) do
+ActiveRecord::Schema.define(version: 2021_08_07_171419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,20 @@ ActiveRecord::Schema.define(version: 2021_08_07_170259) do
     t.index ["state_id"], name: "index_districts_on_state_id"
   end
 
+  create_table "enrollments", force: :cascade do |t|
+    t.string "enrollment_no"
+    t.bigint "student_id", null: false
+    t.bigint "course_id", null: false
+    t.date "joining_date"
+    t.date "exam_date"
+    t.string "grade"
+    t.boolean "certificated_issued"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_enrollments_on_course_id"
+    t.index ["student_id"], name: "index_enrollments_on_student_id"
+  end
+
   create_table "institutes", force: :cascade do |t|
     t.string "name"
     t.string "owner_name"
@@ -113,6 +127,8 @@ ActiveRecord::Schema.define(version: 2021_08_07_170259) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "districts", "states"
+  add_foreign_key "enrollments", "courses"
+  add_foreign_key "enrollments", "students"
   add_foreign_key "institutes", "districts"
   add_foreign_key "institutes", "states"
 end
