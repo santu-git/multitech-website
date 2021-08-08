@@ -1,0 +1,15 @@
+.notice-bar
+  .container
+    .row
+      .col-sm-12.col-md-3.notice-section
+        %span.bi.bi-telephone-fill
+        +91 9733902255
+      .col-sm-12.col-md-3.notice-section
+        %span.bi.bi-envelope-fill
+        info@multitechnologyinstitute.com
+      .col-sm-12.col-md-6.notice-section.text-scroller
+        %span.badge.bg-danger NEWS
+        %marquee
+          = @notifications.pluck(:message).join("     ......       ").upcase
+          -# - @notifications.each do |notification|
+          -# = "#{notification.message.upcase}        ......         "

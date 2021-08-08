@@ -1,0 +1,18 @@
+.notice-bar {
+  border-bottom: 1px solid rgb(238, 233, 233);
+  text-align: center;
+}
+.notice-section {
+  border-left: 1px solid rgb(238, 233, 233);
+  height: inherit;
+  padding: 10px;
+  font-size: 13px;
+  color: #3c434a;
+}
+.text-scroller {
+  display: inline-flex;
+}
+/* .vl {
+  height: 50px;
+  border-left: 1px solid rgb(182, 179, 179);
+} */
