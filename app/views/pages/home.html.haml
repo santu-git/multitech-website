@@ -1,0 +1,40 @@
+#carouselExampleCaptions.carousel.slide{"data-bs-ride" => "carousel"}
+  .carousel-indicators
+    %button.active{"aria-current" => "true", "aria-label" => "Slide 1", "data-bs-slide-to" => "0", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+    %button{"aria-label" => "Slide 2", "data-bs-slide-to" => "1", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+  .carousel-inner
+    .carousel-item.active
+      %img.d-block.w-100{alt: "...", src: image_path('slide1-bg.jpeg')}/
+      .carousel-caption.d-none.d-md-block
+        %h1 Multi Tech Academy
+        %p Some representative placeholder content for the first slide.
+    .carousel-item
+      %img.d-block.w-100{alt: "...", src: image_path('slide2-bg.jpeg')}/
+      .carousel-caption.d-none.d-md-block
+        %h1 Multi Tech Academy
+        %p Some representative placeholder content for the second slide.
+    -# .carousel-item
+    -#   %img.d-block.w-100{:alt => "...", :src => "..."}/
+    -#   .carousel-caption.d-none.d-md-block
+    -#     %h5 Third slide label
+    -#     %p Some representative placeholder content for the third slide.
+  %button.carousel-control-prev{"data-bs-slide" => "prev", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+    %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+    %span.visually-hidden Previous
+  %button.carousel-control-next{"data-bs-slide" => "next", "data-bs-target" => "#carouselExampleCaptions", :type => "button"}
+    %span.carousel-control-next-icon{"aria-hidden" => "true"}
+    %span.visually-hidden Next
+%sestion.filler-container
+  %header
+    What makes us different ?
+  %p{:style => "text-align: justify;"}
+    %span.sd-light
+      %b         MULTI TECHNOLOGY INSTITUTE is an ISO 9001:2015 certified and a Govt. of India register organization. We provide global certificate and expectable by all Employment exchange office of India .MSME-DI is our most important affiliation to establish certificate value compare than other.
+    %br
+    %strong
+      %span.sd-light      
+    %span.sd-light
+      %b     It’s a promises to our self we are band for service about best IT training programme and most enthusiastic performance to develop student by vocational training with a bright professional motto.
+%section.page-section
+  %h4{:style => "text-align: center"} Welcome to Our Institute
+  %h6{:style => "text-align: center;color: #0191c6;font-weight:300;margin-top:2rem"} Checkout our latest programs and courses for you

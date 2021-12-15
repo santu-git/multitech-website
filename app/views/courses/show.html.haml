@@ -1,0 +1,10 @@
+.container
+  .row.m-10
+    .col-md-4.d-none.d-md-block
+      = render 'course_list'
+    .col-sm-12.col-md-8
+      %h3= @course.name
+      %h5= @course.code
+      %h6= @course.duration
+      %h6 Course Details
+      =@course.details.html_safe

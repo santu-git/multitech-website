@@ -11,5 +11,3 @@
         %span.badge.bg-danger NEWS
         %marquee
           = @notifications.pluck(:message).join("     ......       ").upcase
-          -# - @notifications.each do |notification|
-          -# = "#{notification.message.upcase}        ......         "

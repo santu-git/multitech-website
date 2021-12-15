@@ -16,3 +16,23 @@
   height: 50px;
   border-left: 1px solid rgb(182, 179, 179);
 } */
+
+.filler-container {
+  padding: 30px;
+  background-color: rgb(83, 114, 209);
+  display: block;
+  text-align: center;
+}
+.filler-container > header {
+  color: white;
+  font-size: 1rem;
+}
+.filler-container > p {
+  margin-top: 2em;
+  color: rgb(199, 209, 238);
+  font-weight: 100;
+  font-size: 0.87rem;
+}
+.page-section {
+  margin-top: 4rem;
+}
