@@ -8,6 +8,7 @@
         %span.bi.bi-envelope-fill
         info@multitechnologyinstitute.com
       .col-sm-12.col-md-6.notice-section.text-scroller
-        %span.badge.bg-danger NEWS
+        -if @notifications.length > 0
+          %span.badge.bg-danger NEWS 
         %marquee
           = @notifications.pluck(:message).join("     ......       ").upcase

@@ -5,20 +5,14 @@ ActiveAdmin.register Notification do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :message, :start_date, :end_date
-  index do
-    selectable_column
-    column :message
-    column :start_date
-    column :end_date
-    actions
-  end
-  show do
-    attributes_table do
-      row :message
-      row :start_date
-      row :end_date
-    end
-  end
+  # permit_params :message, :start_date, :end_date
+  #
+  # or
+  #
+  # permit_params do
+  #   permitted = [:message, :start_date, :end_date]
+  #   permitted << :other if params[:action] == 'create' && current_user.admin?
+  #   permitted
+  # end
   
 end
