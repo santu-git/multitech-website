@@ -43,10 +43,10 @@ ActiveAdmin.register Institute do
   #
   # or
   #
-  # permit_params do
-  #   permitted = [:name, :owner_name, :contact_number, :location, :address, :pin_code, :state_id, :district_id]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
+  permit_params do
+    permitted = [:name, :owner_name, :contact_number, :location, :address, :pin_code, :state_id, :district_id, :image]
+    # permitted << :other if params[:action] == 'create' && current_user.admin?
+    # permitted
+  end
   
 end

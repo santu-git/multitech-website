@@ -50,3 +50,4 @@ gem "haml-rails", "~> 2.0"
 gem 'activeadmin_addons'
 gem 'image_processing'
 gem 'activeadmin_quill_editor'
+# gem 'refinerycms', '~> 4.0.0'

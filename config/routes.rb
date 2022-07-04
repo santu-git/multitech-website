@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :courses, only:[:index, :show]
   get '/home', to: 'pages#home'
+  resources :institutes, only:[:index, :show]
   root "pages#home"
 end

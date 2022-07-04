@@ -36,3 +36,12 @@
 .page-section {
   margin-top: 4rem;
 }
+
+.tbl-col{
+  width: 25%;
+  font-size: 0.7rem;
+  display: inline-block;
+}
+.tbl-col-value{
+  margin-left: 30px;
+}
