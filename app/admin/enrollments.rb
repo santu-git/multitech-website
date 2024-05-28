@@ -1,4 +1,5 @@
 ActiveAdmin.register Enrollment do
+  permit_params :enrollment_no, :student_id, :course_id, :joining_date, :exam_date, :grade, :certificated_issued
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
