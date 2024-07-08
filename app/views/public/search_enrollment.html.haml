@@ -1,0 +1,12 @@
+.container
+	%div.center-align
+		%h5.blue-dark Search Enrollments
+		%div
+			= form_with(url: search_enrollment_path, method: :get) do |form|
+				.row.bordered.rounded-border-5 
+					.flex-row.flex-a-c
+						.col.l8.s6.input-field
+							= form.text_field :enrollment_no, id: "search", class: "validate", placeholder: 'Enter your enrollment number'
+						.col.l4.s6
+							= form.submit 'Search', class: "btn btn-primary-1 green", remote: true
+	#search-result

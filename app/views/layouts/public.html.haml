@@ -1,0 +1,40 @@
+!!!
+%html
+	%head
+		%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+		%title Website
+		= csrf_meta_tags
+		= csp_meta_tag
+		= stylesheet_link_tag 'application'
+		= javascript_pack_tag 'application'
+		%link{href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}
+	%body
+		-# %p.notice= notice
+		-# %p.alert= alert
+		.public-index
+			.navbar-fixed.mt0.p0
+				%nav.nav-wrapper.glass-nav
+					%a.brand-logo.mt10{href: "#"}
+						= image_tag('multy-technology-in-a.png')
+					%ul.right
+						%li
+							= link_to "Home", root_path
+						%li
+							= link_to "Course", "#courses"
+						%li
+							= link_to "Study Centers", "#study_centers"
+						%li
+							= link_to "Services", "#services"
+						%li
+							= link_to "Contact Us", "#contact_us"
+						%li.ml20
+							= link_to search_enrollment_path, class: 'btn btn-primary-1' do
+								Student Zone
+								%i.material-icons.right
+									person
+						%li.mx-10
+							= link_to new_admin_user_session_path, class: 'btn btn-primary-1' do
+								Admin
+								%i.material-icons.right
+									lock
+		= yield
