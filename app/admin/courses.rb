@@ -1,6 +1,6 @@
 ActiveAdmin.register Course do
 
-  permit_params :name, :code, :duration, :details
+  permit_params :name, :code, :duration, :details, :syllabus
   
   index do
     selectable_column
@@ -16,6 +16,13 @@ ActiveAdmin.register Course do
       row :duration
       row :details do
         course.details.html_safe
+      end
+      row :syllabus do
+        if course.syllabus.attached?
+          link_to course.syllabus.filename, url_for(course.syllabus)
+        else
+          "No syllabus attached"
+        end
       end
     end
   end
@@ -37,6 +44,7 @@ ActiveAdmin.register Course do
         [{ 'size': ['small', false, 'large', 'huge'] }],
         ['clean']          
         ]}, placeholder: 'Type something...', theme: 'snow' } } }
+        f.input :syllabus, as: :file
     end
     f.para "Press cancel to return to the list without saving."
     f.actions
