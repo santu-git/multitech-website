@@ -552,6 +552,9 @@
   display: flex;
   flex-direction: row;
 }
+.sidenav a {
+  text-decoration: none !important;
+}
 .flex-a-fs {
   align-items: flex-start;
 }
@@ -721,7 +724,7 @@
   border-bottom: 1px solid #c6c6cc;
 }
 .bordered{
-  border: 1px solid #c6c6cc;
+  border: 1px solid #eeeeee;
 }
 
 .blue-darken-1 {
@@ -876,6 +879,7 @@
 .btn.btn-primary-2 {
   display: flex;
   align-items: center;
+  max-height: 30px;
   padding: 5px;
   text-decoration: none;
   margin: 0px;
@@ -958,28 +962,28 @@
 }
 
 
-.cssbuttons-io-button {
-  display: flex;
-  align-items: center;
-  font-family: inherit;
-  font-size: 13px;
-  padding: 2px 2px;
-  width: 100px;
-  color: white;
-  background: #4caf50;
-  border: none;
-  letter-spacing: 0.05em;
-  border-radius: 20em;
-}
+// .cssbuttons-io-button {
+//   display: flex;
+//   align-items: center;
+//   font-family: inherit;
+//   font-size: 13px;
+//   padding: 2px 2px;
+//   width: 100px;
+//   color: white;
+//   background: #4caf50;
+//   border: none;
+//   letter-spacing: 0.05em;
+//   border-radius: 20em;
+// }
 
-.cssbuttons-io-button svg {
-  margin-left: 2px;
-  margin-right: 5px;
-}
+// .cssbuttons-io-button svg {
+//   margin-left: 2px;
+//   margin-right: 5px;
+// }
 
-.cssbuttons-io-button:hover {
-  box-shadow: 0 0.5em 1.5em -0.5em #4d36d0be;
-}
+// .cssbuttons-io-button:hover {
+//   box-shadow: 0 0.5em 1.5em -0.5em #4d36d0be;
+// }
 
 #home {
   width: 100%;
@@ -988,9 +992,9 @@
   background-size: contain; /* Ensures the entire image is visible */
   background-position: right; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
-  position: relative; /* Optional, if you need to position other elements within */
-  align-items: center;
-  display: flex;
+  // position: relative; /* Optional, if you need to position other elements within */
+  // align-items: center;
+  // display: flex;
 }
 
 /* Media queries for responsiveness */
@@ -1017,21 +1021,21 @@
 
 @media (max-width: 576px) {
   #home {
-    display: flex;
-    height: auto;
-    display: block;
-    background-size: cover;
-    background-position: top right;
+    // display: flex;
+    // height: auto;
+    // display: block;
+    // background-size: cover;
+    // background-position: top right;
   }
   .content-row {
     margin-top: 0; /* Remove top margin */
   }
-  .home-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the top */
-    justify-content: flex-start; /* Justify content to the top */
-  }
+  // .home-content {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: flex-start; /* Align items to the top */
+  //   justify-content: flex-start; /* Justify content to the top */
+  // }
   .blue-dark.text-contents {
     margin-top: 20px; /* Add some margin to the top for spacing */
   }
@@ -1049,36 +1053,36 @@
 .ml5 {
   margin-left: 5px;
 }
-a {
-  text-decoration: none;
-  color: white;
-}
+// a {
+//   text-decoration: none;
+//   color: white;
+// }
 
 
-.btn.small.green {
-  background-color: #4CAF50; /* Green background color */
-  color: #fff; /* White text color */
-  text-align: center; /* Center-align text */
-  border-radius: 4px; /* Rounded corners */
-  text-decoration: none; /* Remove underline from links */
-  height: 30px;
-  width: 120px;
+// .btn.small.green {
+//   background-color: #4CAF50; /* Green background color */
+//   color: #fff; /* White text color */
+//   text-align: center; /* Center-align text */
+//   border-radius: 4px; /* Rounded corners */
+//   text-decoration: none; /* Remove underline from links */
+//   height: 30px;
+//   width: 120px;
 
-  transition: background-color 0.3s; /* Smooth background color transition */
-}
+//   transition: background-color 0.3s; /* Smooth background color transition */
+// }
 
-.btn.small.green:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
+// .btn.small.green:hover {
+//   background-color: #45a049; /* Darker green on hover */
+// }
 
-.btn.small.green .material-icons {
-  vertical-align: middle; /* Align icon vertically centered with text */
-  margin-left: 5px; /* Add space between text and icon */
-}
+// .btn.small.green .material-icons {
+//   vertical-align: middle; /* Align icon vertically centered with text */
+//   margin-left: 5px; /* Add space between text and icon */
+// }
 
-.btn.small.green .white-text {
-  margin-right: 5px; /* Add space between icon and text */
-}
+// .btn.small.green .white-text {
+//   margin-right: 5px; /* Add space between icon and text */
+// }
 
 .custom-badge {
   padding: 2px 6px;
@@ -1087,4 +1091,20 @@ a {
   font-size: 12px;
   color: white;
   border-radius: 3px;
+}
+
+.animated-bell {
+  animation: ring 0.7s ease-in-out infinite;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }

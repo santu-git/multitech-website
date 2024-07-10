@@ -11,12 +11,14 @@
 	%body
 		-# %p.notice= notice
 		-# %p.alert= alert
-		.public-index
+		%div.public-index
 			.navbar-fixed.mt0.p0
 				%nav.nav-wrapper.glass-nav
 					%a.brand-logo.mt10{href: "#"}
 						= image_tag('multy-technology-in-a.png')
-					%ul.right
+					%a.sidenav-trigger{ href: "#", 'data-target' => "mobile-demo", style: "text-decoration: none;" }
+						%i.material-icons.menu menu
+					%ul.right.hide-on-med-and-down
 						%li
 							= link_to "Home", root_path
 						%li
@@ -30,11 +32,35 @@
 						%li.ml20
 							= link_to search_enrollment_path, class: 'btn btn-primary-1' do
 								Student Zone
-								%i.material-icons.right
-									person
+								%i.material-icons.right person
 						%li.mx-10
 							= link_to new_admin_user_session_path, class: 'btn btn-primary-1' do
 								Admin
-								%i.material-icons.right
-									lock
-		= yield
+								%i.material-icons.right lock
+
+			%ul.sidenav#mobile-demo
+				%li
+					= link_to "Home", root_path
+				%li
+					= link_to "Course", "#courses"
+				%li
+					= link_to "Study Centers", "#study_centers"
+				%li
+					= link_to "Services", "#services"
+				%li
+					= link_to "Contact Us", "#contact_us"
+				%li
+					= link_to search_enrollment_path, class: 'btn btn-primary-1' do
+						Student Zone
+						%i.material-icons.right person
+				%li
+					= link_to new_admin_user_session_path, class: 'btn btn-primary-1' do
+						Admin
+						%i.material-icons.right lock
+
+			= yield
+:javascript
+	document.addEventListener('DOMContentLoaded', function() {
+		var elems = document.querySelectorAll('.sidenav');
+		var instances = M.Sidenav.init(elems);
+	});

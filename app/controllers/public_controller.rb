@@ -3,6 +3,7 @@ class PublicController < ApplicationController
   def index
     @institutes = Institute.all
     @courses = Course.all
+    @announcements = Announcement.by_published.order(created_at: :desc)
   end
 
   def search_enrollment
