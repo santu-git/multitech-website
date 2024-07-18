@@ -5,7 +5,7 @@ ActiveAdmin.register Institute do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :owner_name, :contact_number, :location, :address, :pin_code, :state_id, :district_id
+  permit_params :name, :owner_name, :contact_number, :location, :address, :pin_code, :state_id, :district_id, :image
   
   index do
     selectable_column
@@ -44,7 +44,7 @@ ActiveAdmin.register Institute do
   # or
   #
   # permit_params do
-  #   permitted = [:name, :owner_name, :contact_number, :location, :address, :pin_code, :state_id, :district_id]
+  #   permitted = [:name, :owner_name, :contact_number, :location, :address, :pin_code, :state_id, :district_id, :image]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end

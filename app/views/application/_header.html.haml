@@ -1,0 +1,16 @@
+%nav.navbar.navbar-light.bg-light.navbar-expand-md
+  .container
+    %a.navbar-brand{:href => "#"}
+      %img{alt: "", src: image_path("multy-technology-in2.png")}/
+    #navbarNav.collapse.navbar-collapse.justify-content-end
+      %ul.navbar-nav
+        %li.nav-item
+          %a.nav-link.active{"aria-current" => "home", :href => "/"} Home
+        %li.nav-item
+          %a.nav-link{href: courses_path} Courses
+        %li.nav-item
+          %a.nav-link{href: institutes_path} Study Center
+        %li.nav-item
+          %a.nav-link{:href => "#"} Contact Us
+        %li.nav-item
+          %a.btn.btn-danger Student Zone

@@ -1,0 +1,29 @@
+.container
+  .row.m-10
+    .col-sm-12.col-md-12
+      %h3.center= @institute.name
+    .col-sm-12.col-md-6
+      =image_tag url_for(@institute.image), class: "img-fluid"
+    .col-sm-12.col-md-6
+      %ul.list-group.list-group-flush
+        %li.list-group-item
+          %span.tbl-col CONATACT PERSON
+          %span.tbl-col-value= @institute.owner_name
+        %li.list-group-item
+          %span.tbl-col CONTACT NUMBER
+          %span.tbl-col-value= @institute.contact_number
+        %li.list-group-item
+          %span.tbl-col LOCATION
+          %span.tbl-col-value= @institute.location
+        %li.list-group-item
+          %span.tbl-col ADDRESS
+          %span.tbl-col-value= @institute.address
+        %li.list-group-item
+          %span.tbl-col PIN
+          %span.tbl-col-value= @institute.pin_code
+        %li.list-group-item
+          %span.tbl-col DSITRICT
+          %span.tbl-col-value= @institute.district.name
+        %li.list-group-item
+          %span.tbl-col STATE
+          %span.tbl-col-value= @institute.state.name
