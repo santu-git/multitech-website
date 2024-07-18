@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   root to: 'public#index'
   get 'public/search_enrollment', to: 'public#search_enrollment', as: 'search_enrollment'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :courses, only:[:index, :show]
+  get '/home', to: 'pages#home'
+  resources :institutes, only:[:index, :show]
+  root "pages#home"
 end

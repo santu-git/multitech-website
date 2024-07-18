@@ -1,0 +1,12 @@
+.container
+  .row
+    - @institutes.each do |institute|
+      .col-sm-12.col-md-3{style: "margin-top:20px !important"}
+        .card.w-100{:style => "width: 18rem;"}
+          -# %img.card-img-top{alt: institute.name, src: "http://via.placeholder.com/250x150/5372d1/FFFFFF?text=#{course.code}"}/
+          =image_tag url_for(institute.image)
+          .card-body
+            %h6.card-subtitle.text-muted= "#{institute.location}, #{institute.district.name}"
+            %p.card-text= institute.name
+            .text-end
+              %a.btn.btn-outline-primary.btn-sm{href: institute_path(institute)} Details

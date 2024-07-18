@@ -116,6 +116,14 @@ ActiveRecord::Schema.define(version: 2024_07_08_155738) do
     t.index ["state_id"], name: "index_institutes_on_state_id"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.string "message"
+    t.date "start_date"
+    t.date "end_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "states", force: :cascade do |t|
     t.string "name"
     t.string "short_name"
