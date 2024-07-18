@@ -17,18 +17,18 @@
 					%a.brand-logo.mt10{href: "#"}
 						= image_tag('multy-technology-in-a.png')
 					%a.sidenav-trigger{ href: "#", 'data-target' => "mobile-demo", style: "text-decoration: none;" }
-						%i.material-icons.menu menu
+						%i.material-icons.menu.blue-darken menu
 					%ul.right.hide-on-med-and-down
 						%li
 							= link_to "Home", root_path
 						%li
-							= link_to "Course", "#courses"
+							= link_to "Course", "#{root_path}#courses"
 						%li
-							= link_to "Study Centers", "#study_centers"
+							= link_to "Study Centers", "#{root_path}#study_centers"
 						%li
-							= link_to "Services", "#services"
+							= link_to "Services", "#{root_path}#services"
 						%li
-							= link_to "Contact Us", "#contact_us"
+							= link_to "Contact Us", "#{root_path}#contact_us"
 						%li.ml20
 							= link_to search_enrollment_path, class: 'btn btn-primary-1' do
 								Student Zone
