@@ -58,17 +58,22 @@
 				%div.flex-row.flex-j-c
 					= image_tag('place_re_lne.svg', alt: '', height: 85, width: 120, class: '')
 				.title.blue-dark.flex-row.flex-j-c Discover our diverse study centers for quality education.
-			%div.px-48.row
+			%div.px-20.row
 				- @institutes&.each do |institute|
-					.col.s12.m6.l3.s1.p20
-						%div.card-style-1.rounded-border-5.on-hover-drop-shadow.on-hover-zoom
-							%div.flex-row.flex-j-c
-								%i.material-icons pin_drop
-							%div.flex-row.flex-j-c.font16.fontw600= institute.name
-							%div.flex-row.flex-j-c.font12.text-muted= institute.location
-							%div.flex-row.flex-j-c.font12.text-muted= institute.district.name
-							%div.flex-row.flex-j-c.font12.text-muted= institute.state.name
-							%div.flex-row.flex-j-c.font12.text-muted= institute.pin_code
+					.col.s12.m6.l4.mb20
+						%div.card-style-1.rounded-border-5.on-hover-drop-shadow.on-hover-zoom.p10{style: ' display: flex; border-radius: 5px; overflow: hidden;'}
+							%div{style: 'width: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden;'}
+								- if institute.image.attached?
+									%div
+									= image_tag(institute.image, alt: institute.name, style: 'width: 300px; height: 200px; object-fit: cover; border-radius: 10px;')
+								- else
+									= image_tag('demo_Institute.png', alt: 'Static Image', style: 'width: 300px; height: 200px; object-fit: cover; border-radius: 10px;')
+							%div{style: 'width: 50%; padding: 10px; display: flex; flex-direction: column; justify-content: center;'}
+								%div.font16.fontw600= institute.name
+								%div.font12.text-muted= institute.location
+								%div.font12.text-muted= institute.district.name
+								%div.font12.text-muted= institute.state.name
+								%div.font12.text-muted= institute.pin_code
 
 	%section#services.pt64.mb60
 		%div
