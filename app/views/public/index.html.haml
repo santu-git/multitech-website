@@ -40,14 +40,16 @@
 			%div.px-48.row
 				- @courses&.each do |course|
 					.col.s12.m6.l3.mb20
-						.card-style-1.white-background.rounded-border-5.on-hover-drop-shadow.on-hover-zoom
-							.flex-row.flex-j-c
-								%i.material-icons.school
-							.flex-row.flex-j-c.font16.fontw600= course.name
-							.flex-row.flex-j-c.font12.text-muted.fontw600= "Duration: #{course.duration}"
-							.flex-row.flex-j-c.font12.text-muted.mt10= course.details.html_safe
-							.flex-row.flex-j-c.font12.text-muted
-							.flex-row.flex-j-c.mt10
+						.card-style-1.white-background.rounded-border-5.on-hover-drop-shadow.on-hover-zoom{style: 'display: flex; flex-direction: column; height: 250px; width: auto;'}
+							.card-content
+								.flex-row.flex-j-c
+									%i.material-icons.school
+								.flex-row.flex-j-c.font16.fontw600= course.name
+								.flex-row.flex-j-c.font12.text-muted.fontw600= "Duration: #{course.duration}"
+								.flex-row.flex-j-c.font12.text-muted.mt10
+									- truncated_details = course.details.split[0...26].join(' ')
+									= "#{truncated_details}#{'...' if course.details.split.size > 26}".html_safe             
+							.card-footer.flex-row.flex-j-c.mt10
 								- if course.syllabus.attached?
 									%a.btn.btn-primary-2.green.center-align{ href: url_for(course.syllabus), download: true }
 										%span.white-text Syllabus
@@ -122,5 +124,13 @@
 				%a.flex-row.flex-j-c{ href: "mailto:info@multitechnologyinstitute.com" }
 					%i.material-icons mail
 					%div.ml10.font16.fontw600 info@multitechnologyinstitute.com
+:css
+	.card-content {
+		flex: 1;
+	}
+
+	.card-footer {
+		margin-top: auto;
+	}
 
 
