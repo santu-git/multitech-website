@@ -1,0 +1,136 @@
+.main.mb100
+	- if @announcements.present?
+		%div.announcements-section.bordered.rounded-border-5.py-10.mx-10
+			- @announcements.each do |announcement|
+				%div
+					%div.card-content.flex-row.flex-a-c.text-center.mx-20
+						%div.ml10
+							%span.card-title
+								%i.material-icons.left.animated-bell
+									notifications_active
+						.title.m0.font14.mr10.green-text= "#{announcement.title}: "
+						.content.font12= announcement.content
+	%section#home
+		.home-content.flex-row 
+			%div.blue-dark.text-contents
+				.row
+					.col.content.p10
+						%div.flex-row.flex-j-c.fontw600.font24 WE JUST DON'T TOUCH,
+						%div.flex-row.flex-j-c.fontw600.font35 WE CREATE MASTERPIECES.
+				-# .flex-row.flex-j-c
+				-# 	.actions
+				-# 		%div.p10
+							-# %div.flex-row.flex-j-c.font12.text-muted.fontw600 Get in touch with us to discover how we can collaborate on creating an exceptional educational experience.
+							-# %div.flex-row.flex-j-c.mt10
+							-# 	.btn.btn-primary-1.green Contact Us
+	%div.bg-light-blue
+		%div.py-20
+			.flex-row.flex-j-c
+				.title What makes us different ?
+			.content.p20.font16
+				%p MULTI TECHNOLOGY INSTITUTE is an ISO 9001:2015 certified and a Govt. of India register organization. We provide global certificate and expectable by all Employment exchange office of India .MSME-DI is our most important affiliation to establish certificate value compare than other.
+				%p It’s a promises to our self we are band for service about best IT training programme and most enthusiastic performance to develop student by vocational training with a bright professional motto.
+
+	- if @courses.present?
+		%section#courses.pt64
+			%div.flex-row.flex-j-c
+				= image_tag('undraw_education.svg', alt: '', height: 85, width: 120, class: '')
+			%div.flex-row.flex-j-c
+				.title.blue-dark Develop skills to launch and grow successful ventures.
+			%div.px-48.row
+				- @courses&.each do |course|
+					.col.s12.m6.l3.mb20
+						.card-style-1.white-background.rounded-border-5.on-hover-drop-shadow.on-hover-zoom{style: 'display: flex; flex-direction: column; height: 250px; width: auto;'}
+							.card-content
+								.flex-row.flex-j-c
+									%i.material-icons.school
+								.flex-row.flex-j-c.font16.fontw600= course.name
+								.flex-row.flex-j-c.font12.text-muted.fontw600= "Duration: #{course.duration}"
+								.flex-row.flex-j-c.font12.text-muted.mt10
+									- truncated_details = course.details.split[0...26].join(' ')
+									= "#{truncated_details}#{'...' if course.details.split.size > 26}".html_safe             
+							.card-footer.flex-row.flex-j-c.mt10
+								- if course.syllabus.attached?
+									%a.btn.btn-primary-2.green.center-align{ href: url_for(course.syllabus), download: true }
+										%span.white-text Syllabus
+										%i.material-icons.right arrow_downward
+	- if @institutes.present?
+		%section#study_centers.pt64
+			%div
+				%div.flex-row.flex-j-c
+					= image_tag('place_re_lne.svg', alt: '', height: 85, width: 120, class: '')
+				.title.blue-dark.flex-row.flex-j-c Discover our diverse study centers for quality education.
+			%div.px-20.row
+				- @institutes&.each do |institute|
+					.col.s12.m6.l4.mb20
+						%div.card-style-1.rounded-border-5.on-hover-drop-shadow.on-hover-zoom.p10{style: ' display: flex; border-radius: 5px; overflow: hidden;'}
+							%div{style: 'width: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden;'}
+								- if institute.image.attached?
+									%div
+									= image_tag(institute.image, alt: institute.name, style: 'width: 300px; height: 200px; object-fit: cover; border-radius: 10px;')
+								- else
+									= image_tag('demo_Institute.png', alt: 'Static Image', style: 'width: 300px; height: 200px; object-fit: cover; border-radius: 10px;')
+							%div{style: 'width: 50%; padding: 10px; display: flex; flex-direction: column; justify-content: center;'}
+								%div.font16.fontw600= institute.name
+								%div.font12.text-muted= institute.location
+								%div.font12.text-muted= institute.district.name
+								%div.font12.text-muted= institute.state.name
+								%div.font12.text-muted= institute.pin_code
+
+	%section#services.pt64.mb60
+		%div
+			%div.flex-row.flex-j-c
+				= image_tag('books.svg', alt: '', height: 85, width: 120, class: '')
+			.title.mt40.blue-dark.flex-row.flex-j-c Comprehensive Educational Services for Enhanced Learning and Professional Growth
+		%div.px-48.py-20.row
+			.col.s12.m6.l3.s6
+				%div.card-style-1.rounded-border-5.on-hover-drop-shadow.on-hover-zoom
+					%div.flex-row.flex-j-c
+						%i.material-icons book
+					%div.flex-row.flex-j-c.font16.fontw600.mb10 Good Study Materials & Books
+					%div.flex-row.flex-j-c.font12.text-muted Explore a wide range of study materials and books curated to enhance your learning experience. Find resources that cater to your educational needs and interests.
+			.col.s12.m6.l3.s6
+				%div.card-style-1.rounded-border-5.on-hover-drop-shadow.on-hover-zoom
+					%div.flex-row.flex-j-c
+						%i.material-icons verified_user
+					%div.flex-row.flex-j-c.font16.fontw600.mb10 Efficient & Skilled Teachers
+					%div.flex-row.flex-j-c.font12.text-muted Learn from dedicated and experienced teachers who are committed to helping you achieve your educational goals. Benefit from their expertise and personalized guidance.
+			.col.s12.m6.l3.s6
+				%div.card-style-1.rounded-border-5.on-hover-drop-shadow.on-hover-zoom
+					%div.flex-row.flex-j-c
+						%i.material-icons import_contacts
+					%div.flex-row.flex-j-c.font16.fontw600.mb10 Effective Courses
+					%div.flex-row.flex-j-c.font12.text-muted Discover courses designed to deliver practical knowledge and skills that are relevant to your career or academic pursuits. Gain insights and capabilities that prepare you for success.
+			.col.s12.m6.l3.s6.mb
+				%div.card-style-1.rounded-border-5.on-hover-drop-shadow.on-hover-zoom
+					%div.flex-row.flex-j-c
+						%i.material-icons star
+					%div.flex-row.flex-j-c.font16.fontw600.mb10 Effective Certification
+					%div.flex-row.flex-j-c.font12.text-muted Obtain certifications recognized for their industry relevance and quality standards. Validate your skills and expertise with certifications that enhance your professional profile.
+
+	%section#contact_us.pt64
+		%div
+			%div.flex-row.flex-j-c
+				= image_tag('contact_us.svg', alt: '', height: 85, width: 120, class: '')
+		%div.contact-section
+			%div.flex-row.flex-j-c.title.blue-dark Have any questions?
+			%div.flex-row.flex-j-c.font35.fontw600.p20 Contact us.
+			%div.flex-row.flex-j-c.font14.px-20.font16 Connect effortlessly with us through our concise contact form. Share your inquiries and feedback swiftly. We're here to listen and assist you promptly.
+			%div.flex-row.flex-j-c.mt10
+				%a.flex-row.flex-j-c{ href: "tel:9977665544" }
+					%i.material-icons call
+					%div.ml10.font16.fontw600 9977665544
+			%div.flex-row.flex-j-c.mt10
+				%a.flex-row.flex-j-c{ href: "mailto:info@multitechnologyinstitute.com" }
+					%i.material-icons mail
+					%div.ml10.font16.fontw600 info@multitechnologyinstitute.com
+:css
+	.card-content {
+		flex: 1;
+	}
+
+	.card-footer {
+		margin-top: auto;
+	}
+
+

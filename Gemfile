@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.5'
@@ -50,4 +50,4 @@ gem "haml-rails", "~> 2.0"
 gem 'activeadmin_addons'
 gem 'image_processing'
 gem 'activeadmin_quill_editor'
-# gem 'refinerycms', '~> 4.0.0'
+gem 'materialize-sass'

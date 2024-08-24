@@ -1,0 +1,28 @@
+- if enrollment.present?
+	- puts enrollment.inspect
+	.container
+		.flex-row
+			%div.bb1.fontw600.font18 Enrolment Details
+		.row.card-panel.rounded-border-5
+			.col.l12.s12.center-align
+				- if student.image.attached?
+					= image_tag student.image, class: "responsive-img", style: "max-width: 100px; max-height: 100px; border-radius: 5px;"
+			%div.fontw600.font16.center-align
+				%p.mb5
+					%strong Student Name: 
+					= student.name
+				%p.mb5
+					%strong Guardian's Name: 
+					= student.father_name
+				%p.mb5
+					%strong Registration Number: 
+					= student.reg_no
+				%p.mb5
+					%strong Address: 
+					= student.address
+				%p.mb5
+					%strong Contact Number: 
+					= student.contact_number
+				%p.mb5
+					%strong Certificated Issued ?
+					= certificated_issued_label(enrollment)

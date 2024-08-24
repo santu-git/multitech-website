@@ -1,0 +1,5 @@
+<% if @enrollment.present? %>
+  $('#search-result').html("<%= j render(partial: 'public/search_result', locals: { enrollment: @enrollment, student: @student }) %>");
+<% else %>
+  $('#search-result').html("<div class='alert alert-warning'><strong>Enrollment Not Found!</strong><br>No enrollment was found with the given enrollment number '<%= j params[:enrollment_no] %>'. Please contact the institution for assistance if you have any questions regarding this matter.</div>");
+<% end %>
