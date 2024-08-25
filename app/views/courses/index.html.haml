@@ -3,7 +3,7 @@
     - @courses.each do |course|
       .col-sm-12.col-md-3{style: "margin-top:20px !important"}
         .card.w-100{:style => "width: 18rem;"}
-          %img.card-img-top{alt: course.code, src: "http://via.placeholder.com/250x150/5372d1/FFFFFF?text=#{course.code}"}/
+          %img.card-img-top{alt: course.code, src: "//via.placeholder.com/250x150/5372d1/FFFFFF?text=#{course.code}"}/
           .card-body
             %h6.card-subtitle.text-muted= "Duration: #{course.duration}"
             %p.card-text= course.name
