@@ -14,7 +14,7 @@ ActiveAdmin.register Enrollment do
     f.semantic_errors
     f.inputs do
       f.input :enrollment_no
-      f.input :student, as: :select
+      f.input :student, as: :select, collection: Student.all, label_method: :display_name, value_method: :id
       f.input :course, as: :select
       f.input :joining_date
       f.input :exam_date
