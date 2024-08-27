@@ -9,7 +9,6 @@
               %tr.row.row-reg_no
                 %td{rowspan: "5"}= image_tag student.image.variant(resize: '100x100') if student.image.attached?
                 %td{rowspan: "5"} unless student.image.attached?
-                  Image not available
                 %th Reg No
                 %td= student.reg_no
               %tr.row.row-name
