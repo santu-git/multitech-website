@@ -11,7 +11,7 @@ class Student < ApplicationRecord
   after_create :generate_reg_no
 
   def generate_reg_no
-    self.update_attributes(reg_no: "MTI-R#{Time.new.year}#{id}")
+    self.update_attributes(reg_no: "MTI-R#{Time.new.year}-#{id}")
   end
 
   def display_name
