@@ -4,4 +4,7 @@ class Course < ApplicationRecord
   validates :code,              presence: true
   validates :duration,          presence: true
   validates :details,           presence: true
+
+  has_many :enrollments
+  has_many :students, through: :enrollments
 end

@@ -1,28 +1,42 @@
 - if enrollment.present?
-	- puts enrollment.inspect
-	.container
-		.flex-row
-			%div.bb1.fontw600.font18 Enrolment Details
-		.row.card-panel.rounded-border-5
-			.col.l12.s12.center-align
-				- if student.image.attached?
-					= image_tag student.image, class: "responsive-img", style: "max-width: 100px; max-height: 100px; border-radius: 5px;"
-			%div.fontw600.font16.center-align
-				%p.mb5
-					%strong Student Name: 
-					= student.name
-				%p.mb5
-					%strong Guardian's Name: 
-					= student.father_name
-				%p.mb5
-					%strong Registration Number: 
-					= student.reg_no
-				%p.mb5
-					%strong Address: 
-					= student.address
-				%p.mb5
-					%strong Contact Number: 
-					= student.contact_number
-				%p.mb5
-					%strong Certificated Issued ?
-					= certificated_issued_label(enrollment)
+  .container
+    .flex-row
+      %div.fontw600.font18 Enrolment Details
+    .row.card-panel.rounded-border-5
+      .col.l12.s12.center-align
+        - if student.image.attached?
+          = image_tag student.image, class: "responsive-img", style: "max-width: 100px; max-height: 100px; border-radius: 5px;"
+      .row.m0.p0
+        .col.l12.s12
+          .p10
+            %div.p5{ class: cycle('row', 'row grey lighten-4') }
+              %strong.col.l6 Enrollment Number:
+              .col.l6= enrollment.enrollment_no
+
+            %div.p5{ class: cycle('row', 'row grey lighten-4') }
+              %strong.col.l6 Student Name:
+              .col.l6= student.name
+
+            %div.p5{ class: cycle('row', 'row grey lighten-4') }
+              %strong.col.l6 Joining Date:
+              .col.l6= enrollment.joining_date
+
+            %div.p5{ class: cycle('row', 'row grey lighten-4') }
+              %strong.col.l6 Course Code:
+              .col.l6= enrollment.course.code
+
+            %div.p5{ class: cycle('row', 'row grey lighten-4') }
+              %strong.col.l6 Course Duration:
+              .col.l6= enrollment.course.duration
+
+            %div.p5{ class: cycle('row', 'row grey lighten-4') }
+              %strong.col.l6 Exam Date:
+              .col.l6= enrollment.exam_date
+
+            %div.p5{ class: cycle('row', 'row grey lighten-4') }
+              %strong.col.l6 Grade:
+              .col.l6= enrollment.grade.present? ? enrollment.grade : 'NA'
+
+            %div.p5{ class: cycle('row', 'row grey lighten-4') }
+              %strong.col.l6 Certificated Issued?
+              .col.l6= certificated_issued_label(enrollment)
