@@ -7,7 +7,8 @@
           %table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
             %tbody
               %tr.row.row-reg_no
-                %td{rowspan: "5"}= image_tag student.image.variant(resize: '100x100')
+                %td{rowspan: "5"}= image_tag student.image.variant(resize: '100x100') if student.image.attached?
+                %td{rowspan: "5"}= NA unless student.image.attached?
                 %th Reg No
                 %td= student.reg_no
               %tr.row.row-name
